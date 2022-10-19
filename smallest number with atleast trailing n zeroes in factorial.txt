@@ -1,0 +1,23 @@
+class Solution{
+public:
+
+    int getTrailZero(int num){
+        int sum{}, p = 5;
+        while(num / p > 0) sum += num/p, p*=5;
+        return sum;
+    }
+
+    int findNum(int n){
+       int low = 0, high = n*5,  ans{};
+       
+       while(low <= high){
+           int mid = (low + high) / 2;
+           int zeroes = getTrailZero(mid);
+          
+           if(zeroes >= n) ans = mid, high = mid - 1;
+           else low = mid + 1;
+       }
+       
+       return ans;
+    }
+};
