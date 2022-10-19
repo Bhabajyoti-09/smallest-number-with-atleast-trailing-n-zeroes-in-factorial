@@ -1,0 +1,1 @@
+# smallest-number-with-atleast-trailing-n-zeroes-in-factorial
